@@ -14,7 +14,7 @@
 }
 
 .period-rotation {
-  animation: periodRotation .8s linear infinite;
+  animation: periodRotation 0.8s linear infinite;
 }
 
 @keyframes periodRotation {

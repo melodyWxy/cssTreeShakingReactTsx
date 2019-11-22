@@ -1,6 +1,6 @@
 import * as React from "react";
 import typeStyle from './config';
-import './index.css';
+import './index.less';
 
 export interface IconProps {
   type?: string;

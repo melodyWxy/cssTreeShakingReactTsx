@@ -50,24 +50,25 @@ module.exports = {
                     }
                 }
             })},
-            // json
-            // { test: /\.less?$/,use: ExtractTextPlugin.extract({
-            //     use: {
-            //         loader:"less-loader"
-            //     },
-            //     fallback: {
-            //         loader: "style-loader",
-            //         options: {
-            //         singleton: true
-            //         }
-            //     },
-            //     use: {
-            //         loader: "css-loader",
-            //         options: {
-            //         minimize: true
-            //         }
-            //     }
-            // })},
+            { test: /\.less?$/,use: ExtractTextPlugin.extract({
+                fallback: {
+                    loader: "style-loader",
+                    options: {
+                    // singleton: true
+                    }
+                },
+                use: [{
+                    loader:"css-loader",
+                    options: {
+                    // minimize: true
+                    }
+                },{
+                    loader:"less-loader",
+                    options: {
+                    // minimize: true
+                    }
+                }], 
+            })},
             { test: /\.json?$/,loader: "json-loader" },
             { test: /\.(png|jpg|gif|woff|svg|eot|woff2|ttf)$/,loader: ["url-loader?limit=8192"]},
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
